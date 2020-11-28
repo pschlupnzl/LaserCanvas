@@ -1,0 +1,299 @@
+/*********************************************************
+* Language-specific Resource File
+* Language: English
+* $PSchlup 2000-2006 $    $Revision 5 $
+********************************************************/
+#include "resource.h"
+
+ICON_LASRCANV5 ICON "lc5iconb.ico";
+CUR_MOVE_ARROW CURSOR "cursor.cur";
+
+/********************************************************
+* Menu - main window
+********************************************************/
+// LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+LASRCANV_MENU MENU
+BEGIN
+   POPUP "&File"
+   BEGIN
+      MENUITEM "&New Resonator\tCtrl+N",CMU_FILE_NEWRESO
+      MENUITEM "New Propa&gation",     CMU_FILE_NEWPROP
+      MENUITEM SEPARATOR
+      MENUITEM "&Open...\tCtrl+O",     CMU_FILE_OPEN
+      MENUITEM "&Save\tCtrl+S",        CMU_FILE_SAVE
+      MENUITEM "Save &As...",          CMU_FILE_SAVEAS
+      MENUITEM "&Close Model",         CMU_FILE_CLOSEMODEL
+      MENUITEM SEPARATOR
+      MENUITEM "Page Set&up...",       CMU_FILE_PRINTSETUP, GRAYED
+      MENUITEM "&Print...\tCtrl+P",    CMU_FILE_PRINT
+      MENUITEM "Prin&t All..."       , CMU_FILE_PRINTALL
+      MENUITEM SEPARATOR
+      MENUITEM "E&xit\tAlt+F4",        CMU_FILE_EXIT
+   END
+   POPUP "&Edit"
+   BEGIN
+      MENUITEM "&Copy"                 CMU_COPYDATA
+      MENUITEM SEPARATOR
+      POPUP "&Insert"
+      BEGIN
+         MENUITEM "Insert &Mirror",           CMU_INS_MIRR
+         MENUITEM "Insert &Lens",             CMU_INS_LENS
+         MENUITEM "Insert &Plate",            CMU_INS_PLAT
+         MENUITEM "Insert &Crystal",          CMU_INS_CRYS
+         MENUITEM "Insert &Brewster",         CMU_INS_BREW
+         MENUITEM "Insert Pr&ism Pair",       CMU_INS_PRIP
+         MENUITEM "Insert &Screen",           CMU_INS_SCRN
+      END
+      MENUITEM "&Delete Optics",           CMU_DEL_OPTI
+      MENUITEM SEPARATOR
+      MENUITEM "&Output Coupler",      CMU_INS_SPAWN
+   END
+   POPUP "&Canvas"
+   BEGIN
+      MENUITEM "&Select",              CMU_TOOL_ARROW
+      MENUITEM "&Measure",             CMU_TOOL_MEASURE
+      MENUITEM "&Zoom",                CMU_TOOL_ZOOM
+      MENUITEM "&Pan",                 CMU_TOOL_PAN
+      MENUITEM "&Rotate",              CMU_TOOL_ROTATE
+      MENUITEM SEPARATOR
+      MENUITEM "Zoom &In\aCtrl+Page Up", CMU_CNV_ZOOMIN
+      MENUITEM "Zoom &Out\aCtrl+Page Down", CMU_CNV_ZOOMOUT
+      MENUITEM SEPARATOR
+      MENUITEM "&Draft Mode"         , CMU_TOOL_DRAFT
+   END
+   POPUP "&Tools"
+   BEGIN
+      MENUITEM "&Mode Plot",           CMU_VIEW_MODESIZE
+      MENUITEM "&System Graph",        CMU_VIEW_SYSGRAPH
+      MENUITEM "&Optic Graph",         CMU_VIEW_VXGRAPH
+      MENUITEM "I&nventory",           CMU_VIEW_INVENTORY
+      MENUITEM "Sol&ver",              CMU_VIEW_SOLVER
+      MENUITEM "Wireframe 3&D",        CMU_VIEW_RENDER3D
+      MENUITEM SEPARATOR
+      MENUITEM "&Properties",          CMU_VIEW_PROPERTIES
+      MENUITEM "Doc&k Properties",     CMU_VIEW_DOCKPROP
+      MENUITEM "Property E&quations",  CMU_VIEW_PROPEQTN
+   END
+   POPUP "&Window"
+   BEGIN
+      MENUITEM "&Tile",                CMU_WINDOW_TILE
+      MENUITEM "&Cascade",             CMU_WINDOW_CASCADE
+      MENUITEM "&Arrange Icons",       CMU_WINDOW_ARGICON
+      MENUITEM "&Restore",             CMU_WINDOW_RESTORE
+   END
+   POPUP "&Help"
+   BEGIN
+      MENUITEM "Help...\tF1",          CMU_HELP_HELP
+      MENUITEM "About...\tCtrl+F1",    CMU_HELP_ABOUT
+   END
+END
+
+/*********************************************************
+* Accelerator table
+*********************************************************/
+//LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+LASRCANV_ACCEL ACCELERATORS
+BEGIN
+   "^N"        , CMU_FILE_NEWRESO
+   "^O"        , CMU_FILE_OPEN
+   "^S"        , CMU_FILE_SAVE
+   "^P"        , CMU_FILE_PRINT
+   //VK_F1       , CMU_HELP_ABOUT,  CONTROL, VIRTKEY
+   //VK_F1       , CMU_HELP_HELP,            VIRTKEY
+   //VK_PRIOR    , CMU_CNV_ZOOMIN, CONTROL, VIRTKEY
+   //VK_NEXT     , CMU_CNV_ZOOMOUT, CONTROL, VIRTKEY
+END
+
+/*********************************************************
+* String table LANG_ENGLISH
+*********************************************************/
+//LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+STRINGTABLE {
+   //---Window titles---------------------------
+   SZ_TITLE_SYSWIN1D         , "Mode Plot %s"
+   SZ_TITLE_SYSWIN2D         , "Canvas %s"
+   SZ_TITLE_SYSWIN3D         , "Wireframe %s"
+   SZ_TITLE_SYSWINABCDSOLVER , "Solver %s"
+   SZ_TITLE_SYSWINGRAPH      , "System Graph %s"
+   SZ_TITLE_SYSWININVENTORY  , "Inventory %s"
+   SZ_TITLE_SYSWINVXGRAPH    , "Optic Graph %s"
+
+   //---Load File Errors------------------------
+   SZERR_LOAD_FILEOPEN , "Could not open file for reading."
+   SZERR_LOAD_BUFALLOC , "Could not allocate memory buffer for reading."
+   SZERR_LOAD_NOTOPSYS , "The file contains no top-level system."
+   SZERR_LOAD_NOSPAWN  , "Could not find spawned system in file."
+   SZERR_LOAD_SYSNOOPT , "The system contains no optics."
+   SZERR_LOAD_RNDNOSYS , "Renderer has no system declared."
+   SZERR_LOAD_RNDBADSYS, "Renderer has bad system declaration."
+   SZERR_LOAD_RNDSYSFND, "Could not find system declared for renderer."
+   SZERR_LOAD_GRPHBADVX, "Renderer has bad vertex declaration."
+   SZERR_LOAD_NOGRPHVX , "Could not find declared renderer vertex in system."
+   SZERR_LOAD_GRPHQSYS , "Renderer for vertex points to wrong system."
+   SZERR_SOLV_ALLOC    , "Error allocating buffers."
+   SZERR_SOLV_NOVAR    , "Equation contains no variables."
+   SZERR_HELP_FILE     , "Could not find the help file or application."
+   SZERR_HELP_LAUNCH   , "Could not launch the Help browser."
+   SZERR_SYSDRAFTOPTICS, "Resonators containing\n - prisms, and/or\n - out-coupled systems\ncannot be edited in Draft Mode. Please delete these elements\nand try again."
+   SZERR_SYSDRAFTCAVITY, "The system does not seem to be a valid cavity."
+
+   SZMSG_DELSPAWN       , "This will delete the outcoupled system from the model."
+   SZMSG_FILESAVED      , "File saved %s."
+   SZMSG_SOLVEEVAL      , "The Solver expression evaluates to\n   %lg."
+
+   //---Menu Status Bar Tips--------------------
+   CMU_FILE_NEWRESO     , "Create a new model of a standing wave resonator"
+   CMU_FILE_NEWPROP     , "Create a new propagation model"
+   CMU_FILE_OPEN        , "Open a file"
+   CMU_FILE_SAVE        , "Save the current file"
+   CMU_FILE_SAVEAS      , "Save the current file with a new name"
+   CMU_FILE_CLOSEMODEL  , "Close the current model"
+   CMU_FILE_PRINTSETUP  , "Configure print layout"
+   CMU_FILE_PRINT       , "Print the current window"
+   CMU_FILE_PRINTALL    , "Print all windows of the current model"
+   CMU_FILE_EXIT        , "Close all models and exit"
+   CMU_COPYDATA         , "Copy data to the clipboard"
+   CMU_INS_MIRR         , "Insert a flat or curved mirror"
+   CMU_INS_LENS         , "Insert a lens or thermal lens"
+   CMU_INS_PLAT         , "Insert a refractive plate"
+   CMU_INS_CRYS         , "Insert a refractive crystal"
+   CMU_INS_BREW         , "Insert a refractive plate at Brewster's angle"
+   CMU_INS_PRIP         , "Insert a prism pair"
+   CMU_INS_SCRN         , "Insert an observation screen"
+   CMU_DEL_OPTI         , "Delete the selected optic(s)"
+   CMU_INS_SPAWN        , "Create output coupler and propagation system"
+   CMU_VIEW_MODESIZE    , "Display a linear plot of the mode size"
+   CMU_VIEW_SYSGRAPH    , "Create a graph of a system property"
+   CMU_VIEW_VXGRAPH     , "Create a graph of an optic property"
+   CMU_VIEW_INVENTORY   , "List all optics in the system"
+   CMU_VIEW_SOLVER      , "Define an equation solver"
+   CMU_VIEW_RENDER3D    , "Create a wireframe rendering of the system"
+   CMU_VIEW_PROPERTIES  , "Show / hide the property manager"
+   CMU_VIEW_DOCKPROP    , "Dock / float the property manager"
+   CMU_VIEW_PROPEQTN    , "Show / hide source equations in the property manager"
+   CMU_TOOL_ARROW       , "Select the Selection tool"
+   CMU_TOOL_MEASURE     , "Select the Measurement tool"
+   CMU_TOOL_ZOOM        , "Select the Zoom tool"
+   CMU_TOOL_PAN         , "Select the Pan tool"
+   CMU_TOOL_ROTATE      , "Select the Rotate tool"
+   CMU_TOOL_DRAFT       , "Edit system in Draft mode"
+   CMU_CNV_ZOOMIN       , "Increase the model size in the window"
+   CMU_CNV_ZOOMOUT      , "Decrease the model size in the window"
+   CMU_WINDOW_TILE      , "Tile all windows"
+   CMU_WINDOW_CASCADE   , "Arrange windows in a cascade"
+   CMU_WINDOW_ARGICON   , "Arrange window icons"
+   CMU_WINDOW_RESTORE   , "Restore window sizes"
+   CMU_HELP_HELP        , "Open the help file"
+   CMU_HELP_ABOUT       , "Show version information"
+
+   //---Property Manager Labels-----------------
+   CPS_VXHEADER      , "%s"
+   CPS_VXTAG         , "Tag"
+   CPS_VXRADCURV     , "Radius Curvature (mm)"
+   CPS_VXRADCURVSAG  , "Radius Curv. (sag) (mm)"
+   CPS_VXRADCURVTAN  , "Radius Curv. (tan) (mm)"
+   CPS_VXFOCALLEN    , "Focal Length (mm)"
+   CPS_VXFOCALLENSAG , "Focal Length (sag) (mm)"
+   CPS_VXFOCALLENTAN , "Focal Length (tan) (mm)"
+   CPS_VXROCFLASTIG  , "Astigmatic"
+   CPS_VXFACEANGL    , "Face Angle (deg)"
+   CPS_VXLOCKFACEANGL, "Fixed Angle"
+   CPS_VXBLOCKREFINDX, "Refractive Index"
+   CPS_VXTHICKNESS   , "Thickness (mm)"
+   CPS_VXFLIPDIR     , "Direction"
+   CPS_VXFLIPDIRFLIP , "Flip"
+   CPS_VXDISTNEXT    , "Distance to Next (mm)"
+   CPS_VXSPOTSIZE    , "Spot Size (um)"
+   CPS_VXCURVATURE   , "Curvature (mm)"
+   CPS_VXABCDSAG     , "ABCD (Sagittal)"
+   CPS_VXABCDTAN     , "ABCD (Tangential)"
+   CPS_VXASTIG       , "Astigmatism (mm)"
+
+   CPS_EQHEADER      , "Variables"
+   CPS_EQVARNAME     , "Variable"
+   CPS_EQVALUE       , "   Value"
+   CPS_EQSLIDER      , "   Slider"
+   CPS_EQRANGE       , "   Range"
+
+   CPS_SLVHEADER     , "Solver"
+   CPS_SLVFCNTOL     , "Function Tolerance"
+   CPS_SLVMAXITER    , "Max. Iterations"
+   CPS_SLVDIR        , "Solve for"
+
+   CPS_SYSHEADER     , "%s System"
+   CPS_SYSHEADRESO   , "Resonator"
+   CPS_SYSHEADPROP   , "Propagation"
+   CPS_SYSHEADSPWN   , "Out-coupled"
+   CPS_SYSTAG        , "Name"
+   CPS_SYSWAVELEN    , "Wavelength (nm)"
+   CPS_SYSMSQUARED   , "Beam Quality M²"
+   CPS_SYSMSQUAREDSAG, "Beam M² (sag)"
+   CPS_SYSMSQUAREDTAN, "Beam M² (tan)"
+   CPS_SYSMSQASYM    , "M² Asymmetric"
+   CPS_SYSROTATION   , "Rotation (deg)"
+   CPS_SYSSTARTX     , "Start X (mm)"
+   CPS_SYSSTARTY     , "Start Y (mm)"
+   CPS_SYSPHYSLEN    , "Physical Length (mm)"
+   CPS_SYSOPTLEN     , "Optical Length (mm)"
+   CPS_SYSMODESPACE  , "Mode Spacing (MHz)"
+   CPS_SYSINITDATA   , "Input Parameters"
+   CPS_SYSISAGSIZE   , "Sag. Mode Size (um)"
+   CPS_SYSISAGCURV   , "Sag. Curvature (mm)"
+   CPS_SYSISAGWAIST  , "Sag. Waist (um)"
+   CPS_SYSISAGDSTW   , "Sag. Waist Dist. (mm)"
+   CPS_SYSITANSIZE   , "Tan. Mode Size (um)"
+   CPS_SYSITANCURV   , "Tan. Curvature (mm)"
+   CPS_SYSITANWAIST  , "Tan. Waist (um)"
+   CPS_SYSITANDSTW   , "Tan. Waist Dist. (mm)"
+   CPS_SYSABCDSAG    , "ABCD (Sagittal)"
+   CPS_SYSABCDTAN    , "ABCD (Tangential)"
+   CPS_SYSSTABILITY  , "Stability"
+
+   CPS_CNVHEADER     , "Canvas"
+   CPS_CNVXYCENTER   , "Center (mm)" // not used?
+   CPS_CNVZOOM       , "Zoom (%%)"
+   CPS_CNVMODESIZE   , "Mode Scale"
+   CPS_CNVOPTSIZE    , "Optics Size (mm)"
+   CPS_CNVGRIDSIZE   , "Grid Size (mm)"
+   CPS_CNV3DORG      , "Look At (mm)"
+   CPS_CNV3DCAM      , "Camera (mm)"
+   CPS_CNV3DCAMELEV  , "Elevation (mm)"
+   CPS_CNV3DCAMANGL  , "View Angle (deg)"
+   CPS_CNVSNAPGRID   , "Snap to Grid"
+   CPS_CNVSHOWDIST   , "Separations"
+   CPS_CNVSHOWANNOT  , "Annotations"
+   CPS_CNVSHOWWAIST  , "Waists"
+   CPS_CNVSHOWICONS  , "Icons"
+
+   CPS_GRPHEADER     , "Graph"
+   CPS_GRPSYSFCN     , "System Property"
+   CPS_GRPVXFCN      , "Optic Property"
+   CPS_GRPAXXRNG     , "X-Axis Range"
+   CPS_GRPAXYRNG     , "Y-Axis Range"
+   CPS_GRPNUMSTP     , "Points"
+   CPS_GRPRUNVAR     , "Ordinate Variable"
+
+   CPS_CMDHEADER     , "Common Tasks"
+   CPS_COMMANDNEW    , "New Resonator"
+   CPS_COMMANDNEWPROP, "New Propagation"
+   CPS_COMMANDOPEN   , "Open..."
+   CPS_COMMANDCLOSE  , "Close Model"
+
+   //---Popup menu commands---------------------
+   CMU_POPUP_COPYDATA, "&Copy Data"
+   CMU_BUTTON_SOLVE,   "Solve"
+   CMU_BUTTON_EVAL,    "Evaluate"
+   CMU_BUTTON_RESTORE, "Restore"
+
+   //---Property lists--------------------------
+   // Here delimited with '~' (including at end!)
+   // check also lists in CVertex.h (CVXI_PROP_FCNMAX)
+   // and CSystem.h (CSYSI_PROP_FCNMAX)
+   CPL_SYSFCNNAMES   , "Physical Length (mm)~Optical Length (mm)~Mode Spacing (MHz)~Stability~"
+   CPL_SYSINPPARAM   , "Waist, Distance~Mode, Curvature~"
+   CPL_VXFCNNAMES    , "Mode w (um)~Curvature R (mm)~Waist w0 (um)~Distance z0 (mm)~Rayleigh zR (mm)~Astigmatism (mm)~"
+   CPL_VXTYPENAMES   , "Optics~Mirror~Lens~Flat Mirror~Thermal Lens~Screen~Source~Crystal In~Crystal Out~Brewster In~Brewster Out~Prism A~Prism B~Plate In~Plate Out~Output Coupler~"
+   CPL_SLVDIR        , "Minimum~Maximum~"
+   CPL_INVVXCOLS     , "Optic~Tag~X~Y~ROC/FL~(mm)~Angle~~Dist~n~Mode~(mm)~Curv~(mm)~"
+   CPL_INVSYSROWS    , "Wavelength (nm)~M² (sag/tan)~Length (mm) (Phys./Opt.)~Mode Spacing (MHz)~Stability (sag/tan)~"
+}

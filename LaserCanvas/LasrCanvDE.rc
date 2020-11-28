@@ -1,0 +1,288 @@
+/*********************************************************
+* Resource File
+* Language: Deutsch
+* $PSchlup 2000-2006 $    $Revision 5 $
+********************************************************/
+#include "resource.h"
+//LANGUAGE LANG_GERMAN
+
+/********************************************************
+* Menu - main window
+********************************************************/
+LANGUAGE LANG_GERMAN, SUBLANG_NEUTRAL
+LASRCANV_MENU MENU
+BEGIN
+   POPUP "&Datei"
+   BEGIN
+      MENUITEM "&Neuer Resonator\tStrg+N",CMU_FILE_NEWRESO
+      MENUITEM "Neue Pr&opagation"   , CMU_FILE_NEWPROP
+      MENUITEM SEPARATOR
+      MENUITEM "Ö&ffnen...\tStrg+O"  , CMU_FILE_OPEN
+      MENUITEM "&Speichern\tStrg+S"  , CMU_FILE_SAVE
+      MENUITEM "Speichern &Unter..." , CMU_FILE_SAVEAS
+      MENUITEM "Modell S&chließen"   , CMU_FILE_CLOSEMODEL
+      MENUITEM SEPARATOR
+      MENUITEM "Seitenansicht..."    , CMU_FILE_PRINTSETUP, GRAYED
+      MENUITEM "&Drucken...\tStrg+P" , CMU_FILE_PRINT
+      MENUITEM "A&lle Drucken..."    , CMU_FILE_PRINTALL
+      MENUITEM SEPARATOR
+      MENUITEM "Be&enden\tAlt+F4"    , CMU_FILE_EXIT
+   END
+   POPUP "&Bearbeiten"
+   BEGIN
+      MENUITEM "&Kopieren",            CMU_COPYDATA
+      MENUITEM SEPARATOR
+      POPUP "&Einfügen"
+      BEGIN
+         MENUITEM "&Spiegel",             CMU_INS_MIRR
+         MENUITEM "&Linse",               CMU_INS_LENS
+         MENUITEM "Pla&tte",              CMU_INS_PLAT
+         MENUITEM "&Kristall",            CMU_INS_CRYS
+         MENUITEM "&Brewster",            CMU_INS_BREW
+         MENUITEM "&Prisenpaar",          CMU_INS_PRIP
+         MENUITEM "&Schirm",              CMU_INS_SCRN
+      END
+      MENUITEM "&Optik Löschen",       CMU_DEL_OPTI
+      MENUITEM SEPARATOR
+      MENUITEM "&Auskoppeln"         , CMU_INS_SPAWN
+   END
+   POPUP "Malf&läche"
+   BEGIN
+      MENUITEM "&Bearbeiten"         , CMU_TOOL_ARROW
+      MENUITEM "&Messen"             , CMU_TOOL_MEASURE
+      MENUITEM "&Zoom"               , CMU_TOOL_ZOOM
+      MENUITEM "Ver&setzen"          , CMU_TOOL_PAN
+      MENUITEM "&Rotieren"           , CMU_TOOL_ROTATE
+      MENUITEM SEPARATOR
+      MENUITEM "Ver&rößern"          , CMU_CNV_ZOOMIN
+      MENUITEM "Ver&kleinern"        , CMU_CNV_ZOOMOUT
+   END
+   POPUP "E&xtras"
+   BEGIN
+      MENUITEM "&Modengröße",          CMU_VIEW_MODESIZE
+      MENUITEM "Graphik &System",      CMU_VIEW_SYSGRAPH
+      MENUITEM "Graphik &Optik",       CMU_VIEW_VXGRAPH
+      MENUITEM "I&nventar",            CMU_VIEW_INVENTORY
+      MENUITEM "O&ptimierung",         CMU_VIEW_SOLVER
+      MENUITEM "&Drahtmodell",         CMU_VIEW_RENDER3D
+      MENUITEM SEPARATOR
+      MENUITEM "&Eigenschaften",       CMU_VIEW_PROPERTIES
+      MENUITEM "Eingedoc&kt",          CMU_VIEW_DOCKPROP
+      MENUITEM "&Formeln",             CMU_VIEW_PROPEQTN
+   END
+   POPUP "&Fenster"
+   BEGIN
+      MENUITEM "&Nebeneinander"      , CMU_WINDOW_TILE
+      MENUITEM "&Kaskade"            , CMU_WINDOW_CASCADE
+      MENUITEM "&Arrangieren"        , CMU_WINDOW_ARGICON
+      MENUITEM "&Wiedererstellen"    , CMU_WINDOW_RESTORE
+   END
+   POPUP "&?"
+   BEGIN
+      MENUITEM "Hilfe...\tF1"        , CMU_HELP_HELP, GRAYED
+      MENUITEM "Info...\tStrg+F1"    , CMU_HELP_ABOUT
+   END
+END
+
+
+/*********************************************************
+* Accelerator table
+*********************************************************/
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+LASRCANV_ACCEL ACCELERATORS
+BEGIN
+   "^N" , CMU_FILE_NEWRESO
+   "^O" , CMU_FILE_OPEN
+   "^S" , CMU_FILE_SAVE
+   "^P" , CMU_FILE_PRINT
+   VK_F1, CMU_HELP_ABOUT,  CONTROL, VIRTKEY
+   VK_F1, CMU_HELP_HELP,  VIRTKEY
+END
+
+/*********************************************************
+* String table LANG_ENGLISH
+*********************************************************/
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+STRINGTABLE {
+   //---Window titles---------------------------
+   SZ_TITLE_SYSWIN1D+LANG_DE         , "Modengröße %s"
+   SZ_TITLE_SYSWIN2D         , "Leinwand %s"
+   SZ_TITLE_SYSWIN3D         , "Drahtmodell %s"
+   SZ_TITLE_SYSWINABCDSOLVER , "Optimierung %s"
+   SZ_TITLE_SYSWINGRAPH      , "Graphik System %s"
+   SZ_TITLE_SYSWININVENTORY  , "Inventar %s"
+   SZ_TITLE_SYSWINVXGRAPH    , "Graphik Optik %s"
+
+   //---Load File Errors------------------------
+   SZERR_LOAD_FILEOPEN , "Die Datei konnte zum Lesen nicht geöffnet werden."
+   SZERR_LOAD_BUFALLOC , "Der Speicherplatz reicht zum Einlesen der Datei nicht aus."
+   SZERR_LOAD_NOTOPSYS , "Die Datei entält kein Primärsystem."
+   SZERR_LOAD_NOSPAWN  , "Das abgeleitete System konnte in der Datei nicht gefunden werden."
+   SZERR_LOAD_SYSNOOPT , "Das System enthält keine optische Elemente."
+   SZERR_LOAD_RNDNOSYS , "Das Ansichtsfenster ist mit keinem System verknüpft."
+   SZERR_LOAD_RNDBADSYS, "Die Systemverknüpfung des Ansichtsfensters enthält einen Fehler."
+   SZERR_LOAD_RNDSYSFND, "Das mit dem Ansichtsfenster verknüpfte System konnte nicht gefunden werden."
+   SZERR_LOAD_GRPHBADVX, "Die Optikverknüpfung des Ansichtsfensters enthält einen Fehler."
+   SZERR_LOAD_NOGRPHVX , "Die mit dem Ansichtsfenster verknüpfte Optik konnte im System nicht gefunden werden."
+   SZERR_LOAD_GRPHQSYS , "Das Ansichtsfenster des optischen Elements ist mit einem falschen System verknüpft."
+   SZERR_SOLV_ALLOC    , "Fehler beim sichern des Speicherplatzes."
+   SZERR_SOLV_NOVAR    , "Die Formel enthällt keine Variable."
+   SZERR_HELP_FILE     , "Die Hilfedatei oder -anwendung konnte nicht gefunden werden."
+   SZERR_HELP_LAUNCH   , "Der Hilfebrowser konnte nicht gestartet werden."
+
+   SZMSG_DELSPAWN      , "Dieser Vorgang wird das ausgekoppelte System löschen."
+   SZMSG_FILESAVED     , "Datei %s gespeichert."
+   SZMSG_SOLVEEVAL     , "Aktueller Formelwert:\n   %lg."
+
+   //---Menu Status Bar Tips--------------------
+   CMU_FILE_NEWRESO     , "Neues Modell eines Resonators erstellen"
+   CMU_FILE_NEWPROP     , "Neues Propagationsmodell erstellen"
+   CMU_FILE_OPEN        , "Gespeichertes Modell öffnen"
+   CMU_FILE_SAVE        , "Diese Datei speichern"
+   CMU_FILE_SAVEAS      , "Diese Datei mit neuem Namen speichern"
+   CMU_FILE_CLOSEMODEL  , "Aktuelles Modell schließen"
+   CMU_FILE_PRINTSETUP  , "Druckereinstellungen"
+   CMU_FILE_PRINT       , "Aktuelles Fenster drucken"
+   CMU_FILE_PRINTALL    , "Alle Fenster der Datei drucken"
+   CMU_FILE_EXIT        , "Alle Modelle schließen und Programm beenden"
+   CMU_COPYDATA         , "Daten kopieren"
+   CMU_INS_MIRR         , "Flacher oder gekrümmter Spiegel einfügen"
+   CMU_INS_LENS         , "Linse oder thermische Linse einfügen"
+   CMU_INS_PLAT         , "Platte einfügen"
+   CMU_INS_CRYS         , "Kristall einfügen"
+   CMU_INS_BREW         , "Platte mit Brewster-Schliff einfügen"
+   CMU_INS_PRIP         , "Prismenpaar einfügen"
+   CMU_INS_SCRN         , "Ansichtsschirm einfügen"
+   CMU_DEL_OPTI         , "Markierte Optiken löschen"
+   CMU_INS_SPAWN        , "Licht auskoppeln und System anhängen"
+   CMU_VIEW_MODESIZE    , "Graphik der Modengröße zeigen"
+   CMU_VIEW_SYSGRAPH    , "Abhängigkeit einer Systemeingenschaft zeigen"
+   CMU_VIEW_VXGRAPH     , "Abhängigkeit einer Optikeigenschaft zeigen"
+   CMU_VIEW_INVENTORY   , "Liste aller Optiken zeigen"
+   CMU_VIEW_SOLVER      , "Variablen per Formel Optimieren"
+   CMU_VIEW_RENDER3D    , "Räumliche Verteilung als Drahtmodell zeigen"
+   CMU_VIEW_PROPERTIES  , "Eigenschaftstabelle einblenden"
+   CMU_VIEW_DOCKPROP    , "Eigenschaftstabelle frei stehen lassen"
+   CMU_VIEW_PROPEQTN    , "Formeln in der Eigenschaftstabelle einblenden"
+   CMU_TOOL_ARROW       , "Bearbeitungswerkzeug auswählen"
+   CMU_TOOL_MEASURE     , "Messwerkzeug auswählen"
+   CMU_TOOL_ZOOM        , "Vergrößerungswerkzeug auswählen"
+   CMU_TOOL_PAN         , "Verzetzungswerkzeug auswählen"
+   CMU_TOOL_ROTATE      , "Werkzeug zum Drehen auswählen"
+   CMU_CNV_ZOOMIN       , "Angezeigte Modell vergrößern"
+   CMU_CNV_ZOOMOUT      , "Angezeigte Modell verkleinern"
+   CMU_WINDOW_TILE      , "Fenster Nebeneinander platzieren"
+   CMU_WINDOW_CASCADE   , "Fenster zur Kaskade arrangieren"
+   CMU_WINDOW_ARGICON   , "Fensterikone arrangieren"
+   CMU_WINDOW_RESTORE   , "Fenstergrößen wiedererstellen"
+   CMU_HELP_HELP        , "Programmhilfe starten"
+   CMU_HELP_ABOUT       , "Information zur Programmversion anzeigen"
+
+   //---Property Manager Labels-----------------
+   CPS_VXHEADER      , "%s"
+   CPS_VXTAG         , "Kürzel"
+   CPS_VXRADCURV     , "Krümmungsradius (mm)"
+   CPS_VXRADCURVSAG  , "Krümmungsradius (sag.) (mm)"
+   CPS_VXRADCURVTAN  , "Krümmungsradius (tan.) (mm)"
+   CPS_VXFOCALLEN    , "Brennweite (mm)"
+   CPS_VXFOCALLENSAG , "Brennweite (sag.) (mm)"
+   CPS_VXFOCALLENTAN , "Brennweite (tan.) (mm)"
+   CPS_VXROCFLASTIG  , "Astigmatisch"
+   CPS_VXFACEANGL    , "Einfallswinkel (°)"
+   CPS_VXLOCKFACEANGL, "Winkel Festlegen"
+   CPS_VXBLOCKREFINDX, "Brechungsindex"
+   CPS_VXTHICKNESS   , "Dicke (mm)"
+   CPS_VXFLIPDIR     , "Richtung"
+   CPS_VXDISTNEXT    , "Abstand zur Nächsten (mm)"
+   CPS_VXSPOTSIZE    , "Modengrösse (um)"
+   CPS_VXCURVATURE   , "Krümmung (mm)"
+   CPS_VXABCDSAG     , "ABCD (Sagittal)"
+   CPS_VXABCDTAN     , "ABCD (Tangential)"
+   CPS_VXASTIG       , "Astigmatismus (mm)"
+   CPS_VXFLIPDIRFLIP , "Spiegeln"
+
+   CPS_EQHEADER      , "Variablen"
+   CPS_EQVARNAME     , "Name"
+   CPS_EQVALUE       , "   Aktueller Wert"
+   CPS_EQSLIDER      , "   Schieber"
+   CPS_EQRANGE       , "   Spanne"
+
+   CPS_SLVHEADER     , "Optimierung"
+   CPS_SLVFCNTOL     , "Toleranz"
+   CPS_SLVMAXITER    , "Iterationen"
+   CPS_SLVDIR        , "Strategie"
+
+   CPS_SYSHEADER     , "%s System"
+   CPS_SYSHEADRESO   , "Resonator"
+   CPS_SYSHEADPROP   , "Propagation"
+   CPS_SYSHEADSPWN   , "Ausgekoppelt"
+   CPS_SYSTAG        , "Name"
+   CPS_SYSWAVELEN    , "Wellenlänge (nm)"
+   CPS_SYSMSQUARED   , "Strahlqualität M²"
+   CPS_SYSROTATION   , "Drehung (°)"
+   CPS_SYSSTARTX     , "Startposition X (mm)"
+   CPS_SYSSTARTY     , "Startposition Y (mm)"
+   CPS_SYSPHYSLEN    , "Physikalische Länge (mm)"
+   CPS_SYSOPTLEN     , "Optische Länge (mm)"
+   CPS_SYSMODESPACE  , "Modenabstand (MHz)"
+   CPS_SYSINITDATA   , "Eingabeparameter"
+   CPS_SYSISAGSIZE   , "Sag. Modengrösse (um)"
+   CPS_SYSISAGCURV   , "Sag. Krümmung (mm)"
+   CPS_SYSISAGWAIST  , "Sag. Taille (um)"
+   CPS_SYSISAGDSTW   , "Sag. Dist. zur Taille (mm)"
+   CPS_SYSITANSIZE   , "Tan. Modengrösse (um)"
+   CPS_SYSITANCURV   , "Tan. Krümmung (mm)"
+   CPS_SYSITANWAIST  , "Tan. Taille (um)"
+   CPS_SYSITANDSTW   , "Tan. Dist. zur Taille (mm)"
+   CPS_SYSABCDSAG    , "ABCD (Sagittal)"
+   CPS_SYSABCDTAN    , "ABCD (Tangential)"
+   CPS_SYSSTABILITY  , "Stabilitätsparameter"
+
+   CPS_CNVHEADER     , "Leinwand"
+   CPS_CNVXYCENTER   , "Mitte (mm)" // not used?
+   CPS_CNVZOOM       , "Zoom (%%)"
+   CPS_CNVMODESIZE   , "Modenskalierung"
+   CPS_CNVOPTSIZE    , "Optik Grösse (mm)"
+   CPS_CNVGRIDSIZE   , "Rasterabstand (mm)"
+   CPS_CNV3DORG      , "Blickmitte (mm)"
+   CPS_CNV3DCAM      , "Kamera (mm)"
+   CPS_CNV3DCAMELEV  , "Höhe (mm)"
+   CPS_CNV3DCAMANGL  , "Blickwinkel (°)"
+   CPS_CNVSNAPGRID   , "Raster"
+   CPS_CNVSHOWDIST   , "Abstände Einblenden"
+   CPS_CNVSHOWANNOT  , "Anmerkungen Einblenden"
+   CPS_CNVSHOWWAIST  , "Taillen Einblenden"
+   CPS_CNVSHOWICONS  , "Ikone Einblenden"
+
+   CPS_GRPHEADER     , "Graphik"
+   CPS_GRPSYSFCN     , "Systemparameter"
+   CPS_GRPVXFCN      , "Optikparameter"
+   CPS_GRPAXXRNG     , "Spanne X-Achse"
+   CPS_GRPAXYRNG     , "Spanne Y-Achse"
+   CPS_GRPNUMSTP     , "Punktzahl"
+   CPS_GRPRUNVAR     , "Abhängigkeitsvariable"
+
+   CPS_CMDHEADER     , "Befehle"
+   CPS_COMMANDNEW    , "Neuer Resonator"
+   CPS_COMMANDNEWPROP, "Neue Propagation"
+   CPS_COMMANDOPEN   , "Öffnen..."
+   CPS_COMMANDCLOSE  , "Modell Schließen"
+
+   //---Popup menu commands---------------------
+   CMU_POPUP_COPYDATA, "Daten Kopieren"
+   CMU_BUTTON_SOLVE  , "Start"
+   CMU_BUTTON_EVAL   , "Auswerten"
+   CMU_BUTTON_RESTORE, "Zurück"
+
+   //---Property lists--------------------------
+   // Here delimited with '~' (including at end!)
+   // check also lists in CVertex.h (CVXI_PROP_FCNMAX)
+   // and CSystem.h (CSYSI_PROP_FCNMAX)
+   CPL_SYSFCNNAMES   , "Physicalische Länge (mm)~Optische Länge (mm)~Stabilität~"
+   CPL_SYSINPPARAM   , "Taille, Distanz~Mode, Krümmung~"
+   CPL_VXFCNNAMES    , "Mode w (um)~Krümmung R (mm)~Taille w0 (um)~Distanz z0 (mm)~Rayleigh zR (mm)~Astigmatismus (mm)~"
+   CPL_VXTYPENAMES   , "Optik~Spiegel~Linse~Flacher Spiegel~Thermische Linse~Schirm~Quelle~Kristalleingang~Kristallausgang~Brewstereingang~Brewsterasugang~Prisma A~Prisma B~Platteneingang~Plattenausgang~Auskoppler~"
+   CPL_SLVDIR        , "Minimum~Maximum~"
+   CPL_INVVXCOLS     , "Optik~Symbol~X~Y~ROC/BW~(mm)~Winkel~~Distanz~n~Mode~(mm)~Krüm.~(mm)~"
+   CPL_INVSYSROWS    , "Wellenlänge (nm) / M²~Länge (mm) (phys./opt.)~Modenabstand (MHz)~Stabilität (sag/tan)~"
+}

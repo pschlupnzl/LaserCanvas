@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{919E9518-E6DE-4F2F-A6C1-F99295AE0228}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LaserCanvas</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CAbcd.cpp" />
+    <ClCompile Include="CApplication.cpp" />
+    <ClCompile Include="caxes.cpp" />
+    <ClCompile Include="CBasicBar.cpp" />
+    <ClCompile Include="CButton.cpp" />
+    <ClCompile Include="CButtonBar.cpp" />
+    <ClCompile Include="CLCEqtn.cpp" />
+    <ClCompile Include="CMActive.cpp" />
+    <ClCompile Include="CMouse.cpp" />
+    <ClCompile Include="CPropItem.cpp" />
+    <ClCompile Include="CPropMgr.cpp" />
+    <ClCompile Include="CQuickEdit.cpp" />
+    <ClCompile Include="CQuickMenu.cpp" />
+    <ClCompile Include="CStatusBar.cpp" />
+    <ClCompile Include="CSystem.cpp" />
+    <ClCompile Include="CSysWin.cpp" />
+    <ClCompile Include="CSysWin1d.cpp" />
+    <ClCompile Include="CSysWin2d.cpp" />
+    <ClCompile Include="CSysWin3d.cpp" />
+    <ClCompile Include="CSysWinABCDSolver.cpp" />
+    <ClCompile Include="CSysWinGraph.cpp" />
+    <ClCompile Include="CSysWinInventory.cpp" />
+    <ClCompile Include="CSysWinVxGraph.cpp" />
+    <ClCompile Include="CTooltip.cpp" />
+    <ClCompile Include="CVertex.cpp" />
+    <ClCompile Include="LasrCanv5.cpp" />
+    <ClCompile Include="LCUtil.cpp" />
+    <ClCompile Include="NeldMead.cpp" />
+    <ClCompile Include="Renderer2d.cpp" />
+    <ClCompile Include="Renderer3d.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BTNBAR.RC" />
+    <ResourceCompile Include="LasrCanvCom.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="LasrCanvDE.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="LasrCanvEN.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CAbcd.h" />
+    <ClInclude Include="CApplication.h" />
+    <ClInclude Include="caxes.h" />
+    <ClInclude Include="CBasicBar.h" />
+    <ClInclude Include="CButton.h" />
+    <ClInclude Include="CButtonBar.h" />
+    <ClInclude Include="CChainLink.h" />
+    <ClInclude Include="CLCEqtn.h" />
+    <ClInclude Include="CMActive.h" />
+    <ClInclude Include="CMouse.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="CPropItem.h" />
+    <ClInclude Include="CPropMgr.h" />
+    <ClInclude Include="CQuickEdit.h" />
+    <ClInclude Include="CQuickMenu.h" />
+    <ClInclude Include="CStatusBar.h" />
+    <ClInclude Include="CSystem.h" />
+    <ClInclude Include="CSysWin.h" />
+    <ClInclude Include="CSysWin1d.h" />
+    <ClInclude Include="CSysWin2d.h" />
+    <ClInclude Include="CSysWin3d.h" />
+    <ClInclude Include="CSysWinABCDSolver.h" />
+    <ClInclude Include="CSysWinGraph.h" />
+    <ClInclude Include="CSysWinInventory.h" />
+    <ClInclude Include="CSysWinVxGraph.h" />
+    <ClInclude Include="CTooltip.h" />
+    <ClInclude Include="CVertex.h" />
+    <ClInclude Include="LasrCanv5.h" />
+    <ClInclude Include="LCUtil.h" />
+    <ClInclude Include="Renderer2d.h" />
+    <ClInclude Include="Renderer3d.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
